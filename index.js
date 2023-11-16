@@ -1,46 +1,50 @@
-'use strict';
+(function () {
+  "use strict";
 
-const stopBtn = document.getElementById("stopButton");
-const slowBtn = document.getElementById("slowButton");
-const goBtn = document.getElementById("goButton");
+  // YOUR CODE HERE
 
-const stopLight = document.getElementById("stopLight");
-const slowLight = document.getElementById("slowLight");
-const goLight = document.getElementById("goLight");
+  // Declaring buttons
+  const stopBtn = document.getElementById("stopButton");
+  const slowBtn = document.getElementById("slowButton");
+  const goBtn = document.getElementById("goButton");
 
+  // Declaring lights
+  const stopLight = document.getElementById("stopLight");
+  const slowLight = document.getElementById("slowLight");
+  const goLight = document.getElementById("goLight");
 
-console.log(stopLight);
+  // EventListeners for click event to toggle the lights
+  stopBtn.addEventListener("click", () => {
+    stopLight.classList.toggle("stop");
+  });
+  slowBtn.addEventListener("click", () => {
+    slowLight.classList.toggle("slow");
+  });
+  goBtn.addEventListener("click", () => {
+    goLight.classList.toggle("go");
+  });
 
-stopBtn.addEventListener('click', () => {
-  stopLight.classList.toggle("stop");
-});
+  // EventListeners for entering the button
+  stopBtn.addEventListener("mouseenter", () => {
+    console.log("Mouse entered stop button");
+  });
+  slowBtn.addEventListener("mouseenter", () => {
+    console.log("Mouse entered slow button");
+  });
+  goBtn.addEventListener("mouseenter", () => {
+    console.log("Mouse entered go button");
+  });
 
-slowBtn.addEventListener('click', () => {
-  slowLight.classList.toggle("slow");
-});
+  // EventListeners for leaving the button
+  stopBtn.addEventListener("mouseleave", () => {
+    console.log("Mouse left stop button");
+  });
+  slowBtn.addEventListener("mouseleave", () => {
+    console.log("Mouse left slow button");
+  });
+  goBtn.addEventListener("mouseleave", () => {
+    console.log("Mouse left go button");
+  });
 
-goBtn.addEventListener('click', () => {
-  goLight.classList.toggle("go");
-});
-
-// var x = createelement html <div>
-// x.style.backgroundcolor
-// htmlTAG.
-
-
-
-
-
-
-// comment out later
-/*
-const span = document.querySelector("span");
-const classes = span.classList;
-
-span.addEventListener("click", () => {
-  const result = classes.toggle("c");
-  span.textContent = `'c' ${
-    result ? "added" : "removed"
-  }; classList is now "${classes}".`;
-});
-*/
+  //addEventListener("mouseleave", (event) => {});})();
+})();
